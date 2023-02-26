@@ -88,7 +88,7 @@ for i in range(len(dbTest)):
 # printing the header as the solution
 # --> add your Python code here
 for i in range(len(header[0])):
-    print(header[0][i], end = "\t\t")
+    print(header[0][i].ljust(15), end = "")
 print()
 
 # use your test samples to make probabilistic predictions. For instance: clf.predict_proba([[3, 1, 2, 1]])[0]
@@ -98,11 +98,11 @@ for i in range(len(dbTest)):
 
     if score_yes >= 0.75: # skips the number if both of the scores are below 0.75
         for j in range(len(dbTest[i]) - 1): # sub-index into the instance
-            print(dbTest[i][j], end = "\t\t")
-        print(f"Yes   (confidence): {score_yes}", end = "\t\t")
+            print(dbTest[i][j].ljust(15), end = "")
+        print(f"Yes (confidence): {score_yes}".ljust(15), end = "")
         print()
     elif score_no >= 0.75:
         for j in range(len(dbTest[i]) - 1): # sub-index into the instance
-            print(dbTest[i][j], end = "\t\t")
-        print(f"No   (confidence): {score_no}", end = "\t\t")
+            print(dbTest[i][j].ljust(15), end = "")
+        print(f"No (confidence): {score_no}".ljust(15), end = "")
         print()
