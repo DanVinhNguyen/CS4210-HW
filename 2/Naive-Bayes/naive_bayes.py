@@ -1,9 +1,9 @@
 # -------------------------------------------------------------------------
 # AUTHOR: Dan Nguyen
 # FILENAME: naive_bayes.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: This program uses Naive Bayes probabilistic approach to compare to other ML/AI algorithms
 # FOR: CS 4210- Assignment #2
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 2 hrs
 # -----------------------------------------------------------*/
 
 # IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard
