@@ -3,7 +3,7 @@
 # FILENAME: naive_bayes.py
 # SPECIFICATION: This program uses Naive Bayes probabilistic approach to compare to other ML/AI algorithms
 # FOR: CS 4210- Assignment #2
-# TIME SPENT: 2 hrs
+# TIME SPENT: 4 hrs
 # -----------------------------------------------------------*/
 
 # IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy OR pandas. You have to work here only with standard
@@ -88,10 +88,21 @@ for i in range(len(dbTest)):
 # printing the header as the solution
 # --> add your Python code here
 for i in range(len(header[0])):
-    print(header[0][i], end = "\t")
+    print(header[0][i], end = "\t\t")
 print()
 
 # use your test samples to make probabilistic predictions. For instance: clf.predict_proba([[3, 1, 2, 1]])[0]
 # --> add your Python code here
 for i in range(len(dbTest)):
-    print(clf.predict_proba([X2[i]])[0], end = "\t")
+    score_yes, score_no = clf.predict_proba([X2[i]])[0]
+
+    if score_yes >= 0.75: # skips the number if both of the scores are below 0.75
+        for j in range(len(dbTest[i]) - 1): # sub-index into the instance
+            print(dbTest[i][j], end = "\t\t")
+        print(f"Yes   (confidence): {score_yes}", end = "\t\t")
+        print()
+    elif score_no >= 0.75:
+        for j in range(len(dbTest[i]) - 1): # sub-index into the instance
+            print(dbTest[i][j], end = "\t\t")
+        print(f"No   (confidence): {score_no}", end = "\t\t")
+        print()
